@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" , content="Red social enfocada en el intercambio cultural" />
+  <meta name="keywords" , content="viaje, turismo, vacaciones. visita, experiencia, descubrimiento, socializacion" />
+  <meta name="author" content="TeroByte TM" />
+  <meta name="copyright" content="TeroByte TM" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="Imagenes/Logo.ico" type="Imagenes/x-icon" />
+  <title>UpToday</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <form action="/buscar" method="get">
+        <input type="text" id="busqueda" name="q" placeholder="Buscar" />
+      </form>
+    </nav>
+  </header>
+
+  <nav id="navegacion">
+    <img id="logo" src="Imagenes/UpTodayLogo.png" alt="UpToday" />
+
+    <a id="inicio" href=""> Inicio </a>
+    <a id="mensajes" href=""> Mensajes </a>
+    <a id="notificaciones" href=""> Notificaciones </a>
+    <a id="perfil" href=""> Perfil </a>
+    <a id="configurar" href="configuracion.html"> Configurar </a>
+  </nav>
+
+  <div id="publicacion">
+    <textarea type="text" id="postear" name="postear" maxlength="250" placeholder="Publica algo..."></textarea>
+    <input type="submit" id="publicar" name="publicar" value="Publicar" />
+    <input type="file" id="archivo_multimedia" name="multimedia" />
+  </div>
+
+  <nav id="post">
+    <div>
+      <img id="fotoperfil" src="Imagenes/FotosPerfil1/FotoDePerfil1.png" alt="imagen de perfil" />
+    </div>
+
+    <div id="Cuerpopost">
+
+      <p id="nombreusuario">Nombre de usuario</p>
+      <a id="ubicacion" href="https://maps.app.goo.gl/bJPLUtTZbeV6Pe8G7"> #Montevideo </a>
+      <hr />
+      <p id="texto post"> hoy visite montevideo, les comparto una de las tantas imagenes que subi para que vean lo lindo
+        que es la ciudad </p>
+
+      <div>
+        <img id="multiinpost" src="Imagenes/FotosPerfil1/Montevideo.jpg" alt="multimedia en post" />
+      </div>
+
+      <small id="Fechahora">Lunes 15:00</small>
+    </div>
+</body>
+
+</html>
