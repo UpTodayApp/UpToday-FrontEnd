@@ -1,65 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description", content="Red social enfocada en el intercambio cultural"/>
-    <meta name="keywords", content="viaje, turismo, vacaciones. visita, experiencia, descubrimiento, socializacion"/>
-    <meta name="author" content="TeroByte TM" />
-    <meta name="copyright" content="TeroByte TM" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="img/Logo.ico" type="image/x-icon" />
-    <title>UpToday</title>
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Red social enfocada en el intercambio cultural" />
+  <meta name="keywords" content="viaje, turismo, vacaciones, visita, experiencia, descubrimiento, socializacion" />
+  <meta name="author" content="TeroByte TM" />
+  <meta name="copyright" content="TeroByte TM" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="Imagenes/Logo.ico" type="image/x-icon" />
+  <title>UpToday</title>
+</head>
+
+<body>
+  <nav id="barra-superior">
+    <a id="logo" href="#" title="Inicio">
+      <img src="imagenes/LogoUpToday.png" alt="Logo" />
+    </a>
+
+    <form id="busqueda-form" action="/buscar" method="get" role="search">
+      <input type="text" id="busqueda" name="q" placeholder="Buscar" />
+    </form>
+
+    <a id="inicio" href="#" title="Inicio">
+      <img src="imagenes/InicioBoton.png" alt="Inicio" />
+    </a>
+    <a id="mensajes" href="#" title="Mensajes">
+      <img src="imagenes/MensajesBoton.png" alt="Mensajes" />
+    </a>
+    <a id="notificaciones" href="#" title="Notificaciones">
+      <img src="imagenes/NotificacionesBoton.png" alt="Notificaciones" />
+    </a>
+    <a id="perfil" href="#" title="Perfil">
+      <img src="imagenes/perfilBoton.png" alt="Perfil" />
+    </a>
+    <a id="configurar" href="configuracion.html" title="Configurar">
+      <img src="imagenes/configuracionBoton.png" alt="Configurar" />
+    </a>
+  </nav>
+
+  <main>
     <header>
-      <nav>
-        <form action="/buscar" method="get">
-          <input type="text" id="busqueda" name="q" placeholder="Buscar" />
-        </form>
-      </nav>
+      <form action="/buscar" method="get" role="search">
+        <label for="busqueda" class="visually-hidden">Buscar:</label>
+        <input type="text" id="busqueda" name="q" placeholder="Buscar" />
+      </form>
     </header>
 
     <nav id="navegacion">
-      <img id="logo" src="/img/Up (3).png" alt="UpToday" />
-
-      <a id="inicio" href=""> Inicio </a>
-      <a id="mensajes" href=""> Mensajes </a>
-      <a id="notificaciones" href=""> Notificaciones </a>
-      <a id="perfil" href=""> Perfil </a>
-      <a id="configurar" href="configuracion.html"> Configurar </a>
+      <img id="logo" src="Imagenes\Lay.png" alt="UpToday" />
     </nav>
-    
-    <div id="publicacion">
-      <textarea
-        type="text"
-        id="postear"    
-        name="postear"
-        maxlength="250"
-        placeholder="Publica algo..."
-      ></textarea>
-      <input type="submit" id="publicar" name="publicar" value="Publicar" />
+
+    <section id="publicacion">
+      <textarea id="postear" name="postear" maxlength="1000" placeholder="Publica algo..."></textarea>
+      <label for="archivo_multimedia" class="btnArchivo">Elegir archivo</label>
       <input type="file" id="archivo_multimedia" name="multimedia" />
-    </div>
+      <input type="submit" id="publicar" name="publicar" value="Publicar" class="btn" />
+    </section>
 
-    <nav id="post">
-      <div>
-        <img id="fotoperfil" src="img/fotoperfil.png" alt="imagen de perfil" />
-      </div>
-
-      <div id="Cuerpopost">
-
-        <p id="nombreusuario">Nombre de usuario</p>
-        <a id="ubicacion" href="https://maps.app.goo.gl/bJPLUtTZbeV6Pe8G7"> #Montevideo </a>
-        <hr/>
-        <p id="texto post"> hoy visite montevideo, les comparto una de las tantas imagenes que subi para que vean lo lindo que es la ciudad </p>
-
-        <div>
-          <img id="multiinpost" src="img/ejemplito.jpg" alt="multimedia en post"/>          
-        </div>
-
+    <article id="post">
+      <header>
+        <img id="fotoperfil" src="Imagenes\fotoperfil.png" alt="Imagen de perfil" />
+        <div id="nombreusuario">Nombre de usuario</div>
+      </header>
+      <section id="Cuerpopost">
+        <a id="ubicacion" href="https://maps.app.goo.gl/bJPLUtTZbeV6Pe8G7" target="_blank">#Montevideo</a>
+        <hr />
+        <p id="texto-post">Hoy visité Montevideo, les comparto una de las tantas imágenes que subí para que vean lo
+          lindo que es la ciudad.</p>
+        <figure>
+          <img id="multiinpost" src="Imagenes\Montevideo.jpg" alt="Multimedia en post" />
+        </figure>
         <small id="Fechahora">Lunes 15:00</small>
-      </div>
-  </body>
+      </section>
+    </article>
+
+  </main>
+
+  <script src="indexFunctions.js"></script>
+
+</body>
+
 </html>
