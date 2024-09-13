@@ -10,12 +10,12 @@
   <meta name="copyright" content="TeroByte TM" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="Imagenes/Logo.ico" type="image/x-icon" />
-  <title>UpToday</title>
+  <title>Mi Perfil</title>
 </head>
 
 <body>
   <nav id="barra-superior">
-    <a id="logo" href="#" title="Inicio">
+    <a id="logo" href="HomePage.html" title="Inicio">
       <img src="imagenes/LogoUpToday.png" alt="Logo" />
     </a>
 
@@ -23,19 +23,19 @@
       <input type="text" id="busqueda" name="q" placeholder="Buscar" />
     </form>
 
-    <a id="inicio" href="#" title="Inicio">
+    <a id="inicio" href="HomePage.html" title="Inicio">
       <img src="imagenes/InicioBoton.png" alt="Inicio" />
     </a>
-    <a id="mensajes" href="#" title="Mensajes">
+    <a id="mensajes" href="HomePage.html" title="Mensajes">
       <img src="imagenes/MensajesBoton.png" alt="Mensajes" />
     </a>
-    <a id="notificaciones" href="#" title="Notificaciones">
+    <a id="notificaciones" href="HomePage.html" title="Notificaciones">
       <img src="imagenes/NotificacionesBoton.png" alt="Notificaciones" />
     </a>
-    <a id="perfil" href="#" title="Perfil">
+    <a id="perfil" href="Index.html" title="Perfil">
       <img src="imagenes/perfilBoton.png" alt="Perfil" />
     </a>
-    <a id="configurar" href="configuracion.html" title="Configurar">
+    <a id="configurar" href="Configuracion.html" title="Configurar">
       <img src="imagenes/configuracionBoton.png" alt="Configurar" />
     </a>
   </nav>
@@ -48,33 +48,31 @@
       </form>
     </header>
 
-    <nav id="navegacion">
-      <img id="logo" src="Imagenes\Lay.png" alt="UpToday" />
-    </nav>
+    <section id="perfil-seccion">
+      <div id="portada">
+        <img src="imagenes/portada.jpg" alt="Portada" />
+      </div>
+      <div id="perfil-info">
+        <div id="foto-perfil-container">
+          <img id="foto-perfil" src="imagenes/foto-perfil.jpg" alt="Foto de perfil" />
+          <div id="profile-details">
+            <p id="profile-name"> Maria Alejandra</p>
+            <div id="buttons-container">
+              <a href="seguido.html" class="perfil-button">100 Seguidos</a>
+              <a href="seguidores.html" class="perfil-button">100 Seguidores</a>
+              <a href="Index.html" class="perfil-button">0 Publicaciones</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section id="publicacion">
-      <textarea id="postear" name="postear" maxlength="1000" placeholder="Publica algo..."></textarea>
+      <textarea id="postear" name="postear" maxlength="255" placeholder="Publica algo..."></textarea>
       <label for="archivo_multimedia" class="btnArchivo">Elegir archivo</label>
       <input type="file" id="archivo_multimedia" name="multimedia" />
       <input type="submit" id="publicar" name="publicar" value="Publicar" class="btn" />
     </section>
-
-    <article id="post">
-      <header>
-        <img id="fotoperfil" src="Imagenes\fotoperfil.png" alt="Imagen de perfil" />
-        <div id="nombreusuario">Nombre de usuario</div>
-      </header>
-      <section id="Cuerpopost">
-        <a id="ubicacion" href="https://maps.app.goo.gl/bJPLUtTZbeV6Pe8G7" target="_blank">#Montevideo</a>
-        <hr />
-        <p id="texto-post">Hoy visité Montevideo, les comparto una de las tantas imágenes que subí para que vean lo
-          lindo que es la ciudad.</p>
-        <figure>
-          <img id="multiinpost" src="Imagenes\Montevideo.jpg" alt="Multimedia en post" />
-        </figure>
-        <small id="Fechahora">Lunes 15:00</small>
-      </section>
-    </article>
 
   </main>
 

@@ -4,31 +4,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Red social enfocada en el intercambio cultural" />
-  <meta name="keywords" content="viaje, turismo, vacaciones. visita, experiencia, descubrimiento, socializacion" />
+  <meta name="description" content="Página de configuración de UpToday" />
+  <meta name="keywords" content="configuración, perfil, tema, idioma, ubicación" />
   <meta name="author" content="TeroByte TM" />
   <meta name="copyright" content="TeroByte TM" />
-  <link rel="stylesheet" href="style-config.css" />
-  <link rel="icon" href="img/Logo.ico" type="image/x-icon" />
-  <title>UpToday</title>
+  <link rel="stylesheet" href="styleConfiguracion.css" />
+  <link rel="icon" href="Imagenes/Logo.ico" type="image/x-icon" />
+  <title>Configuración</title>
 </head>
 
 <body>
-  <nav id="navegacion">
-    <img id="logo" src="/img/UpTodayLogo.png" alt="UpToday" />
+  <nav id="barra-superior">
+    <a id="logo" href="HomePage.html" title="Inicio">
+      <img src="imagenes/LogoUpToday.png" alt="Logo" />
+    </a>
+
+    <form id="busqueda-form" action="/buscar" method="get" role="search">
+      <input type="text" id="busqueda" name="q" placeholder="Buscar" />
+    </form>
+
+    <a id="inicio" href="HomePage.html" title="Inicio">
+      <img src="imagenes/InicioBoton.png" alt="Inicio" />
+    </a>
+    <a id="mensajes" href="HomePage.html" title="Mensajes">
+      <img src="imagenes/MensajesBoton.png" alt="Mensajes" />
+    </a>
+    <a id="notificaciones" href="HomePage.html" title="Notificaciones">
+      <img src="imagenes/NotificacionesBoton.png" alt="Notificaciones" />
+    </a>
+    <a id="perfil" href="Index.html" title="Perfil">
+      <img src="imagenes/perfilBoton.png" alt="Perfil" />
+    </a>
+    <a id="configurar" href="Configuracion.html" title="Configurar">
+      <img src="imagenes/configuracionBoton.png" alt="Configurar" />
+    </a>
   </nav>
 
-  <nav id="configuracion">
-    <label>Permitir ubicacion</label> <input type="checkbox" id="mapa"> <br><br>
-    <label> Notificaciones</label> <input type="checkbox" id="notificaciones"> <br><br>
-    <form>
-      Tema:<select>
-        <option>Claro</option>
-        <option>Oscuro</option>
-      </select>
-    </form> <br>
-    <label>Tarjeta de credito</label> <input type="text" id="Tarjeta" placeholder="xxxx-xxxx-xxxx-xxxx">
-  </nav>
+  <main>
+    <header>
+      <h1>Configuración</h1>
+    </header>
+    <br><br>
+    <section id="configuracion">
+
+      <div class="container">
+        <form id="configuracion-form" action="/guardar-configuracion" method="post">
+          <div class="configuracion-item">
+            <label for="nombre-perfil">Ingrese un nuevo nombre:</label>
+            <input type="text" id="nombre-perfil" name="nombre-perfil" placeholder="Ingresa tu nombre" required />
+            <br>
+            <label for="nombre-perfil">Ingrese un nuevo apellido:</label>
+            <input type="text" id="apellido-perfil" name="apellido-perfil" placeholder="Ingresa tu apellido" required />
+
+          </div>
+
+          <div class="configuracion-item">
+            <label for="tema">Tema:</label>
+            <select id="tema" name="tema">
+              <option value="claro">Claro</option>
+              <option value="oscuro">Oscuro</option>
+            </select>
+          </div>
+
+          <div class="configuracion-item">
+            <label for="ubicacion">Ubicación:</label>
+            <input type="text" id="ubicacion" name="ubicacion" placeholder="Ingresa tu ubicación" />
+          </div>
+
+          <div class="configuracion-item">
+            <label for="idioma">Preferencia de idioma:</label>
+            <select id="idioma" name="idioma">
+              <option value="es">Español</option>
+              <option value="en">Inglés</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn">Guardar cambios</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="indexFunctions.js"></script>
 
 </body>
 
