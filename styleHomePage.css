@@ -1,3 +1,7 @@
+:root {
+    --color-white: hsl(252, 30%, var(--white-color-lightness));
+}
+
 html,
 body,
 div,
@@ -262,7 +266,8 @@ body {
     margin-bottom: 5px;
 }
 
-#publicacion {
+#publicacion,
+.feed {
     margin-top: 80px;
     background-color: #252525;
     color: #ffffff;
@@ -390,9 +395,79 @@ body {
     }
 
     #publicacion,
+    .feed,
     #post {
         width: 90%;
         padding: 10px;
         margin-top: 25px;
     }
+}
+
+/* =============== Feeds ============== */
+
+.feed .head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.feed .user {
+    display: flex;
+    gap: 1rem;
+}
+
+.feed .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    margin: 0.6rem 0;
+}
+
+.liked-by {
+    display: flex;
+}
+
+.liked-by .likedBy {
+    width: 1.4rem;
+    height: 1.4rem;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--color-white);
+    margin-left: -0.6rem;
+}
+
+.liked-by span:first-child {
+    margin: 0;
+}
+
+.liked-by p {
+    margin-left: 0.5rem;
+}
+
+.profile-photo {
+    width: 2.7rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.fotoperfil {
+    width: 45px;
+    height: auto;
+}
+
+.fotofeed {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.likedByPics {
+    width: 1.7rem;
+    height: auto;
+}
+
+.bold-text {
+    font-weight: bold;
 }
