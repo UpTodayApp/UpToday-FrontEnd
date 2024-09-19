@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="Imagenes/Logo.ico" type="image/x-icon" />
   <title>Mi Perfil</title>
+  <script src="indexFunctions.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -68,16 +70,18 @@
     </section>
 
     <section id="publicacion">
-      <textarea id="postear" name="postear" maxlength="255" placeholder="Publica algo..."></textarea>
+      <textarea id="contenido" name="contenido" maxlength="255" placeholder="Publica algo..."></textarea>
       <label for="archivo_multimedia" class="btnArchivo">Elegir archivo</label>
       <input type="file" id="archivo_multimedia" name="multimedia" />
-      <input type="submit" id="publicar" name="publicar" value="Publicar" class="btn" />
+      <input type="button" id="botonCrear" name="publicar" value="Publicar" class="btn" />
     </section>
 
+    <section id="feed">
+      <!-- Aquí se mostrarán las publicaciones -->
+    </section>
   </main>
 
   <script src="indexFunctions.js"></script>
-
 </body>
 
 </html>
