@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="icon" href="Imagenes/Logo.ico" type="image/x-icon" />
     <link rel="stylesheet" href="styleRegistro.css">
 </head>
 
@@ -14,14 +13,15 @@
         <form action="RespuestaRegistro.php" method="post">
             <h1>Registro</h1>
             <div class="Datos">
-                <input type="text" name="nombredeusuario" placeholder="Nombre de usuario" required>
-                <input type="email" name="correo" placeholder="Correo electrónico" required>
-                <input type="date" name="fechanacimiento" placeholder="Fecha de nacimiento" required>
+                <input type="text" id="text" name="nombredeusuario" placeholder="Nombre de usuario" required>
+                <input type="email" id="email" name="correo" placeholder="Correo electrónico" required>
+                <input type="date" id="date" name="fechanacimiento" placeholder="Fecha de nacimiento" required>
             </div>
 
             <div class="Seguridad">
-                <input type="password" name="contrasenia" placeholder="Contraseña" required>
-                <input type="password" name="confirmacion" placeholder="Confirmar contraseña" required>
+                <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+                <input type="password" id="confirmar contraseña" name="confirmacion" placeholder="Confirmar contraseña"
+                    required>
             </div>
 
             <button type="submit" class="boton"> Registrarme </button>
