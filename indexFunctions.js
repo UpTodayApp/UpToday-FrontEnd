@@ -1,3 +1,5 @@
+//------------------------------------CERRAR SESION--------------------------------------------------------------
+
 var token = localStorage.getItem("accessToken");
 if(token == null)
     $(location).prop('href', '/login.html');
@@ -5,7 +7,7 @@ if(token == null)
 $("#salir").click(function(e){
     e.preventDefault();
     jQuery.ajax({  
-        url: 'http://localhost:8000/api/v1/logout',  
+        url: 'http://localhost:8001/api/v1/logout',  
         type: 'GET',
         headers: {
             "Accept" : "application/json",
@@ -25,6 +27,8 @@ $("#salir").click(function(e){
         
     });  
 });
+
+//------------------------------------------------HTML PRINCIPAL------------------------------------------------
 
 function ajustarAlturaTextarea(textarea) {
     textarea.style.height = 'auto';

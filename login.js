@@ -18,7 +18,7 @@ $(document).ready(function(){
     }
 
     jQuery.ajax({  
-        url: 'http://localhost:8000/oauth/token',  
+        url: 'http://localhost:8001/oauth/token',  
         type: 'POST',
         headers: {
             "Accept" : "application/json",

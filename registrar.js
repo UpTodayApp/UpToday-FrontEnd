@@ -19,7 +19,7 @@ $(document).ready(function(){
     }
 
     jQuery.ajax({  
-        url: 'http://localhost:8000/api/v1/user',
+        url: 'http://localhost:8001/api/v1/user',
         type: 'POST',
         headers: {
             "Accept" : "application/json",
