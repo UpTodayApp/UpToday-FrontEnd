@@ -10,7 +10,7 @@
   <meta name="copyright" content="TeroByte TM" />
   <link rel="stylesheet" href="styleHomePage.css" />
   <link rel="icon" href="Imagenes/Logo.ico" type="image/x-icon" />
-  <title>Mi Perfil</title>
+  <title>UpToday</title>
   <script src="indexFunctions.js"></script>
 </head>
 
@@ -27,20 +27,23 @@
     <a id="inicio" href="HomePage.html" title="Inicio">
       <img src="imagenes/InicioBoton.png" alt="Inicio" />
     </a>
+    <a id="perfil" href="Index.html" title="Perfil">
+      <img src="imagenes/perfilBoton.png" alt="Perfil" />
+    </a>
     <a id="mensajes" href="HomePage.html" title="Mensajes">
       <img src="imagenes/MensajesBoton.png" alt="Mensajes" />
     </a>
-    <a id="notificaciones" title="Notificaciones">
+    <a id="notificaciones" href="notificaciones.html" title="Notificaciones">
       <img src="imagenes/NotificacionesBoton.png" alt="Notificaciones" />
     </a>
-    <a id="perfil" href="Index.html" title="Perfil">
-      <img src="imagenes/perfilBoton.png" alt="Perfil" />
+    <a id="configurar" href="eventos.html" title="Configurar">
+      <img src="imagenes/EventosBoton.png" alt="Configurar" />
     </a>
     <a id="configurar" href="Configuracion.html" title="Configurar">
       <img src="imagenes/configuracionBoton.png" alt="Configurar" />
     </a>
     <a id="salir" title="Cerrar sesion">
-      <img src="imagenes/NotificacionesBoton.png" alt="salir" />
+      <img src="imagenes/CerrarSesion.png" alt="salir" />
     </a>
   </nav>
 
@@ -51,13 +54,20 @@
         <input type="text" id="busqueda" name="q" placeholder="Buscar" />
       </form>
     </header>
-    <br>
+
+    <br><br>
     <section id="publicacion">
       <textarea id="contenido" name="contenido" maxlength="255" placeholder="Publica algo..."></textarea>
       <label for="archivo_multimedia" class="btnArchivo">Elegir archivo</label>
       <input type="file" id="archivo_multimedia" name="multimedia" />
       <input type="button" id="botonCrear" name="publicar" value="Publicar" class="btn" />
     </section>
+
+    <section id="feed">
+      <!-- Aquí se mostrarán las publicaciones -->
+    </section>
+
+    <br>
 
     <!--Feed 1-->
     <div class="feed">
@@ -109,10 +119,204 @@
       <div class="comments text-muted">
         Ver todos 52 Comentarios
       </div>
-    </div>
-    <section id="feed">
-      <!-- Aquí se mostrarán las publicaciones -->
-    </section>
+    </div><br>
+    <!--Feed 2-->
+    <div class="feed">
+      <div class="head">
+        <div class="user">
+          <div class="profile-photo">
+            <img class="fotoperfil" src="./Imagenes/Fotos de perfil/Ernesto Martinez.jpg">
+          </div>
+          <div class="info">
+            <span class="bold-text">
+              <h3>Ernesto Martinez</h3>
+            </span>
+            <small>Paris, Hace 1 hora</small>
+          </div>
+        </div>
+        <span class="edit">
+          <i class="uil uil-ellipsis-h"></i>
+        </span>
+      </div>
+
+      <img class="fotofeed" src="./Imagenes/Publicaciones/Paris.jpg">
+
+      <div class="action-buttons">
+        <div class="interaction-buttons">
+          <span><i class="uil uil-heart"></i></span>
+          <span><i class="uil uil-comment-dots"></i></span>
+          <span><i class="uil uil-share-alt"></i></span>
+        </div>
+        <div class="bookmark">
+          <span><i class="uil uil-bookmark-full"></i></span>
+        </div>
+      </div>
+
+      <div class="liked-by">
+        <span class="likedBy"><img class="likedByPics" src="./Imagenes/Fotos de perfil/Ernesto Martinez.jpg"></span>
+        <span class="likedBy"><img class="likedByPics" src="./Imagenes/Fotos de perfil/Jess Delay.jpg"></span>
+        <span class="likedBy"><img class="likedByPics" src="./Imagenes/Fotos de perfil/Chino Alvarez.jpg"></span>
+        <p>Le gusta a <span class="bold-text">Sandra Alvez</span> y <span class="bold-text">122 personas más</span>
+        </p>
+      </div>
+
+      <div class="caption">
+        <p><span class="bold-text">Ernesto Martines</span> Mis sobrinos en París, la ciudad del amor ❤️ #Paris #Amor
+        </p>
+      </div>
+
+      <div class="comments text-muted">
+        Ver todos 13 Comentarios
+      </div>
+    </div><br>
+
+    <!--Feed 3-->
+    <div class="feed">
+      <div class="head">
+        <div class="user">
+          <div class="profile-photo">
+            <img class="fotoperfil" src="./Imagenes/Fotos de perfil/Pablo Castro.jpg">
+          </div>
+          <div class="info">
+            <span class="bold-text">
+              <h3>Pablo Castro</h3>
+            </span>
+            <small>Montevideo, Hace 2 horas</small>
+          </div>
+        </div>
+        <span class="edit">
+          <i class="uil uil-ellipsis-h"></i>
+        </span>
+      </div>
+
+      <img class="fotofeed" src="./Imagenes/Publicaciones/Pasto.jpg">
+
+      <div class="action-buttons">
+        <div class="interaction-buttons">
+          <span><i class="uil uil-heart"></i></span>
+          <span><i class="uil uil-comment-dots"></i></span>
+          <span><i class="uil uil-share-alt"></i></span>
+        </div>
+        <div class="bookmark">
+          <span><i class="uil uil-bookmark-full"></i></span>
+        </div>
+      </div>
+
+      <div class="liked-by">
+        <span class="likedBy"><img class="likedByPics" src="./Imagenes/Fotos de perfil/Ernesto Martinez.jpg"></span>
+        <span class="likedBy"><img class="likedByPics" src="./Imagenes/Fotos de perfil/Jess Delay.jpg"></span>
+        <span class="likedBy"><img class="likedByPics" src="./Imagenes/Fotos de perfil/Chino Alvarez.jpg"></span>
+        <p>Le gusta a <span class="bold-text">Susana Pérez</span> y <span class="bold-text">22 personas más</span>
+        </p>
+      </div>
+
+      <div class="caption">
+        <p><span class="bold-text">Pablo Castro</span> Distrutando de la tarde con mates y la mejor compañia!
+          #Primavera #Uruguay
+        </p>
+      </div>
+
+      <div class="comments text-muted">
+        Ver todos 15 Comentarios
+      </div>
+    </div><br>
+
+    <!--Feed 4-->
+    <div class="feed">
+      <div class="head">
+        <div class="user">
+          <div class="profile-photo">
+            <img class="fotoperfil" src="./Imagenes/Fotos de perfil/Karina Meyer.jpg">
+          </div>
+          <div class="info">
+            <span class="bold-text">
+              <h3>Karina Meyer</h3>
+            </span>
+            <small>Rocha, Hace 4 horas</small>
+          </div>
+        </div>
+        <span class="edit">
+          <i class="uil uil-ellipsis-h"></i>
+        </span>
+      </div>
+
+      <img class="fotofeed" src="./Imagenes/Publicaciones/Viajero.jpg">
+
+      <div class="action-buttons">
+        <div class="interaction-buttons">
+          <span><i class="uil uil-heart"></i></span>
+          <span><i class="uil uil-comment-dots"></i></span>
+          <span><i class="uil uil-share-alt"></i></span>
+        </div>
+        <div class="bookmark">
+          <span><i class="uil uil-bookmark-full"></i></span>
+        </div>
+      </div>
+
+      <div class="liked-by">
+        <span class="likedBy"><img class="likedByPics" src="./Imagenes/Fotos de perfil/Ernesto Martinez.jpg"></span>
+        <span class="likedBy"><img class="likedByPics" src="./Imagenes/Fotos de perfil/Jess Delay.jpg"></span>
+        <span class="likedBy"><img class="likedByPics" src="./Imagenes/Fotos de perfil/Chino Alvarez.jpg"></span>
+        <p>Le gusta a <span class="bold-text">Sandra Alvez</span> y <span class="bold-text">125 personas más</span>
+        </p>
+      </div>
+
+      <div class="caption">
+        <p><span class="bold-text">Karina Meyer</span> Mi tio el mochilero! te amamos #UruguayNatural #Uruguay
+        </p>
+      </div>
+
+      <div class="comments text-muted">
+        Ver todos 48 Comentarios
+      </div>
+    </div><br>
+    <!--Feed 5-->
+    <div class="feed">
+      <div class="head">
+        <div class="user">
+          <div class="profile-photo">
+            <img class="fotoperfil" src="./Imagenes/Fotos de perfil/Karina Meyer.jpg">
+          </div>
+          <div class="info">
+            <span class="bold-text">
+              <h3>Karina Meyer</h3>
+            </span>
+            <small>Rocha, Hace 5 horas</small>
+          </div>
+        </div>
+        <span class="edit">
+          <i class="uil uil-ellipsis-h"></i>
+        </span>
+      </div>
+
+      <img class="fotofeed" src="./Imagenes/Publicaciones/Rocha.jpg">
+
+      <div class="action-buttons">
+        <div class="interaction-buttons">
+          <span><i class="uil uil-heart"></i></span>
+          <span><i class="uil uil-comment-dots"></i></span>
+          <span><i class="uil uil-share-alt"></i></span>
+        </div>
+        <div class="bookmark">
+          <span><i class="uil uil-bookmark-full"></i></span>
+        </div>
+      </div>
+
+      <div class="liked-by">
+        <span class="likedBy"><img class="likedByPics" src="./Imagenes/Fotos de perfil/Ernesto Martinez.jpg"></span>
+        <span class="likedBy"><img class="likedByPics" src="./Imagenes/Fotos de perfil/Jess Delay.jpg"></span>
+        <span class="likedBy"><img class="likedByPics" src="./Imagenes/Fotos de perfil/Chino Alvarez.jpg"></span>
+        <p>Le gusta a <span class="bold-text">Sandra Alvez</span> y <span class="bold-text">15 personas más</span>
+        </p>
+      </div>
+
+      <div class="caption">
+        <p><span class="bold-text">Karina Meyer</span> Unos drinks y nos vamos a la playa 🥂🍾
+        </p>
+      </div>
+      <div class="comments text-muted">
+        Ver todos 13 Comentarios
+      </div>
   </main>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
