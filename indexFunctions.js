@@ -1,3 +1,31 @@
+var token = localStorage.getItem("accessToken");
+if(token == null)
+    $(location).prop('href', '/login.html');
+
+$("#salir").click(function(e){
+    e.preventDefault();
+    jQuery.ajax({  
+        url: 'http://localhost:8000/api/v1/logout',  
+        type: 'GET',
+        headers: {
+            "Accept" : "application/json",
+            "Content-Type" : "application/json",
+            "Authorization" : "Bearer " + localStorage.getItem("accessToken")
+        },
+
+        success: function(resultado) {  
+            localStorage.removeItem("accessToken");
+            $(location).prop('href', '/login.html');
+            
+        },
+        
+        error: function(resultado){
+            alert("Error");
+        } 
+        
+    });  
+});
+
 function ajustarAlturaTextarea(textarea) {
     textarea.style.height = 'auto';
     textarea.style.height = textarea.scrollHeight + 'px';

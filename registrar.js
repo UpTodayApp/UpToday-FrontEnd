@@ -1,4 +1,10 @@
-  document.getElementById("registroForm").addEventListener("submit", function(e) {
+$(document).ready(function(){ 
+
+    var token = localStorage.getItem("accessToken");
+    if(token != null)
+        $(location).prop('href', '/HomePage.html');
+  
+    document.getElementById("registroForm").addEventListener("submit", function(e) {
     e.preventDefault();
     var usuario = e.target.usuario.value;
     var correo = e.target.email.value;
@@ -22,7 +28,6 @@
         data: JSON.stringify(data),
         
         success: function(resultado) {  
-            localStorage.setItem("accessToken", resultado.access_token);
             $(location).prop('href', '/login.html');
             
         },
@@ -32,4 +37,5 @@
         } 
         
     });  
+});
 });

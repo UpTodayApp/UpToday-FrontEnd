@@ -4,7 +4,7 @@ $(document).ready(function(){
     if(token != null)
         $(location).prop('href', '/HomePage.html');
 
-document.getElementById("loginForm").addEventListener("submit", function(e) {
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
     e.preventDefault();
     var contrasena = e.target.contrasena.value;
     var correo = e.target.email.value;
@@ -27,7 +27,6 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
         data: JSON.stringify(data),
         
         success: function(resultado) { 
-            console.log(resultado); 
             localStorage.setItem("accessToken", resultado.access_token);
             $(location).prop('href', '/HomePage.html');
             
