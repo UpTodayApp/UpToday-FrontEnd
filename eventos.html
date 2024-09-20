@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleEventos.css">
+    <title>Eventos</title>
+</head>
+<body>
+    <nav id="barra-superior">
+        <a id="logo" href="HomePage.html" title="Inicio">
+          <img src="imagenes/LogoUpToday.png" alt="Logo" />
+        </a>
+    
+        <form id="busqueda-form" action="/buscar" method="get" role="search">
+          <input type="text" id="busqueda" name="q" placeholder="Buscar" />
+        </form>
+    
+        <a id="inicio" href="HomePage.html" title="Inicio">
+          <img src="imagenes/InicioBoton.png" alt="Inicio" />
+        </a>
+        <a id="mensajes" href="HomePage.html" title="Mensajes">
+          <img src="imagenes/MensajesBoton.png" alt="Mensajes" />
+        </a>
+        <a id="notificaciones" href="HomePage.html" title="Notificaciones">
+          <img src="imagenes/NotificacionesBoton.png" alt="Notificaciones" />
+        </a>
+        <a id="perfil" href="Index.html" title="Perfil">
+          <img src="imagenes/perfilBoton.png" alt="Perfil" />
+        </a>
+        <a id="configurar" href="Configuracion.html" title="Configurar">
+          <img src="imagenes/configuracionBoton.png" alt="Configurar" />
+        </a>
+      </nav>
+
+      <header>
+        <form action="/buscar" method="get" role="search">
+          <label for="busqueda" class="visually-hidden">Buscar:</label>
+          <input type="text" id="busqueda" name="q" placeholder="Buscar" />
+        </form>
+      </header>
+
+    <div class="evento" method="post">
+        <input type="text" id="evento" name="evento" placeholder="Nombre del evento..."> 
+        <input type="text" id="detalles" name="detalles" placeholder="Descripcion del evento..."> 
+        <input type="date" id="fecha" name="fecha" placeholder="Fecha del evento...">
+        <input type="text" id="ubicacion" name="ubicacion" placeholder="ubicacion del evento...">
+        <input type="submit" value="Crear evento">
+    </div>
+
+    <!-- Evento -->
+<div class="feed" id="evento"> 
+  <div class="head">
+    <div class="user">
+      <div class="profile-photo">
+        <img class="fotoperfil" src="./Imagenes/Fotos de perfil/OrganizadorEvento.jpg"> 
+      </div>
+      <div class="info">
+        <span class="bold-text">
+          <h3>Nombre del Organizador</h3> 
+        </span>
+        <small>Ubicación del evento, Hace X tiempo</small> 
+      </div>
+    </div>
+    <span class="edit">
+      <i class="uil uil-ellipsis-h"></i>
+    </span>
+  </div>
+
+  <div class="evento-info"> 
+    <h2>Nombre del Evento</h2> 
+    <p class="detalles">Descripción del evento. Información detallada sobre lo que ocurrirá en el evento, incluyendo actividades, invitados, etc.</p>
+    <p class="fecha-ubicacion">
+      <strong>Fecha:</strong> Fecha del evento <br>
+      <strong>Ubicación:</strong> Lugar del evento
+    </p>
+  </div>
+
+  <img class="fotofeed" src="./Imagenes/Publicaciones/eiffel-tower-paris-with-gorgeous-colors-autumn.jpg"> 
+
+  <div class="action-buttons">
+    <div class="interaction-buttons">
+      <span><i class="uil uil-heart"></i></span>
+      <span><i class="uil uil-comment-dots"></i></span>
+      <span><i class="uil uil-share-alt"></i></span>
+    </div>
+    <div class="bookmark">
+      <span><i class="uil uil-bookmark-full"></i></span>
+    </div>
+  </div>
+
+  <div class="liked-by">
+    <span class="likedBy"><img class="likedByPics" src="./Imagenes/Fotos de perfil/Caro Rodriguez.jpg"></span>
+    <span class="likedBy"><img class="likedByPics" src="./Imagenes/Fotos de perfil/Chino Alvarez.jpg"></span>
+    <p>Le gusta a <span class="bold-text">Usuario1</span> y <span class="bold-text">X personas más</span></p>
+  </div>
+
+  <div class="comments text-muted">
+    Ver todos X Comentarios
+  </div>
+</div>
+
+</body>
+</html>
