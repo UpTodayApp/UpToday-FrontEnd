@@ -1,15 +1,9 @@
-
-
-
-
-document.getElementById("iniciar").addEventListener("click", function() {
-
-    var nombreDeUsuario = document.getElementById('usuario').value;
-    var correo = document.getElementById('email').value;
-    var fechaNacimiento = document.getElementById('fecha').value;
-    var contraseña = document.getElementById('contraseña').value;
-    var confirmarContraseña = document.getElementById('confirmar').value;
-
+  document.getElementById("registroForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    var usuario = e.target.usuario.value;
+    var correo = e.target.email.value;
+    var contraseña = e.target.contraseña.value;
+    var confirmarContraseña = e.target.confirmar.value;
 
     var data = {
         "name": usuario,
@@ -19,7 +13,7 @@ document.getElementById("iniciar").addEventListener("click", function() {
     }
 
     jQuery.ajax({  
-        url: 'http://localhost:8000//api/v1/user',
+        url: 'http://localhost:8000/api/v1/user',
         type: 'POST',
         headers: {
             "Accept" : "application/json",
@@ -38,5 +32,4 @@ document.getElementById("iniciar").addEventListener("click", function() {
         } 
         
     });  
-
 });

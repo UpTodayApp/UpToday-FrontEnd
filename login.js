@@ -1,14 +1,20 @@
-document.getElementById("iniciar").addEventListener("click", function() {
+$(document).ready(function(){ 
 
-    var usuario = document.getElementById('usuario').value;
-    var contraseña = document.getElementById('contraseña').value;
+    var token = localStorage.getItem("accessToken");
+    if(token != null)
+        $(location).prop('href', '/HomePage.html');
+
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    var contrasena = e.target.contrasena.value;
+    var correo = e.target.email.value;
 
     var data = {
-        "username": usuario,
-        "password": contraseña,
+        "username": correo,
+        "password": contrasena,
         "grant_type" : "password",
-        "client_id" : 1, //esto se cambia dependiendo de el que se genere al levantar la api de oauth
-        "client_secret" : "1rCkli5GnDc4L6ZXhv774PTmDtDIC0BOqOKGNmTh" //esto se cambia dependiendo de el que se genere al levantar la api de oauth
+        "client_id" : 1, 
+        "client_secret" : "1rCkli5GnDc4L6ZXhv774PTmDtDIC0BOqOKGNmTh"
     }
 
     jQuery.ajax({  
@@ -20,9 +26,11 @@ document.getElementById("iniciar").addEventListener("click", function() {
         },
         data: JSON.stringify(data),
         
-        success: function(resultado) {  
+        success: function(resultado) { 
+            console.log(resultado); 
             localStorage.setItem("accessToken", resultado.access_token);
             $(location).prop('href', '/HomePage.html');
+            
             
         },
         
@@ -30,6 +38,7 @@ document.getElementById("iniciar").addEventListener("click", function() {
             alert("Credenciales invalidas");
         } 
         
-    });  
-});
+    });
 
+})
+});
