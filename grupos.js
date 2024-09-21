@@ -1,10 +1,20 @@
 $(document).ready(function () {
 
-    var token = localStorage.getItem("accessToken");
-    if (token != null)
-        $(location).prop('href', '/HomePage.html');
 
-    document.getElementById("registroForm").addEventListener("submit", function (e) {
+    function renderGrupo(grupo){
+
+        var grupos = 
+        `
+        <p> Nombre: ${grupo.nombre}</p>
+        <p> Descripcion: ${grupo.descripcion}</p>
+        <br>
+        `;
+
+        $("#feed").prepend(grupos);
+
+    }
+
+    document.getElementById("grupoForm").addEventListener("submit", function (e) {
         e.preventDefault();
         var nombre = e.target.nombre.value;
         var descripcion = e.target.descripcion.value;
@@ -13,10 +23,8 @@ $(document).ready(function () {
             "nombre": nombre,
             "descripcion": descripcion,
         }
-        console.log(nombre);
-        console.log(descripcion);
-        console.log("HolaMundo");
-        /*    jQuery.ajax({
+
+            jQuery.ajax({
                 url: 'http://localhost:8002/api/grupo',
                 type: 'POST',
                 headers: {
@@ -26,8 +34,10 @@ $(document).ready(function () {
                 data: JSON.stringify(data),
     
                 success: function (resultado) {
-                    alert("Grupo creado");
-                    $(location).prop('href', '/login.html');
+                    console.log(resultado);
+                    cargarGrupos();
+                    document.getElementById('nombre').value = '';
+                    document.getElementById('descripcion').value = '';
     
                 },
     
@@ -37,6 +47,26 @@ $(document).ready(function () {
                 }
     
             });
-            */
+
+  
+
     });
+
+    function cargarGrupos() {
+        $.ajax({
+            url: 'http://localhost:8002/api/grupo',
+            type: 'get',
+            success: function (data) {
+                $("#feed").empty();
+                data.forEach(function (grupo) {
+                    renderGrupo(grupo);
+                });
+            },
+            error: function () {
+                alert("Error al cargar los grupos.");
+            }
+        });
+    }
+
+    cargarGrupos();
 });
