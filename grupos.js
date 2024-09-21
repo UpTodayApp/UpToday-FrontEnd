@@ -1,5 +1,19 @@
 $(document).ready(function () {
 
+
+    function renderGrupo(grupo){
+
+        var grupos = 
+        `
+        <p> Nombre: ${grupo.nombre}</p>
+        <p> Descripcion: ${grupo.descripcion}</p>
+        <br>
+        `;
+
+        $("#feed").prepend(grupos);
+
+    }
+
     document.getElementById("grupoForm").addEventListener("submit", function (e) {
         e.preventDefault();
         var nombre = e.target.nombre.value;
@@ -9,10 +23,6 @@ $(document).ready(function () {
             "nombre": nombre,
             "descripcion": descripcion,
         }
-        
-        console.log(nombre);
-        console.log(descripcion);
-        console.log("HolaMundo");
 
             jQuery.ajax({
                 url: 'http://localhost:8002/api/grupo',
@@ -25,7 +35,9 @@ $(document).ready(function () {
     
                 success: function (resultado) {
                     console.log(resultado);
-                    alert("Grupo creado");
+                    cargarGrupos();
+                    document.getElementById('nombre').value = '';
+                    document.getElementById('descripcion').value = '';
     
                 },
     
@@ -36,5 +48,25 @@ $(document).ready(function () {
     
             });
 
+  
+
     });
+
+    function cargarGrupos() {
+        $.ajax({
+            url: 'http://localhost:8002/api/grupo',
+            type: 'get',
+            success: function (data) {
+                $("#feed").empty();
+                data.forEach(function (grupo) {
+                    renderGrupo(grupo);
+                });
+            },
+            error: function () {
+                alert("Error al cargar los grupos.");
+            }
+        });
+    }
+
+    cargarGrupos();
 });
