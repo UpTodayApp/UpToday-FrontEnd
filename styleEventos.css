@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     border: 0;
@@ -50,16 +50,6 @@ body {
     display: block;
 }
 
-#barra-superior a:not(#logo):hover::before {
-    content: '';
-    position: absolute;
-    width: calc(100%);
-    height: calc(100% + 10px);
-    background-color: #3b3b3b;
-    border-radius: 5px;
-    z-index: -1;
-}
-
 #busqueda-form {
     display: flex;
     align-items: center;
@@ -76,6 +66,67 @@ body {
     width: 150px;
     height: 25px;
     outline: none;
+}
+
+.form-container {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#evento-form {
+    background-color: #252525;
+    color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid #6f79d5;
+    width: 80%;
+    max-width: 400px;
+}
+
+.form-item {
+    margin-bottom: 15px;
+}
+
+.form-item label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #6f79d5;
+    border-radius: 10px;
+    background-color: #333;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #bbbbbb;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    background: rgb(29, 43, 105);
+    color: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: rgb(2, 89, 176);
 }
 
 @media (max-width: 768px) {
@@ -103,51 +154,9 @@ body {
     #busqueda-form {
         margin-right: 0;
     }
+
+    .form-container {
+        margin: 20px;
+        margin-top: 85px;
+    }
 }
-
-.evento {
-    position: relative;
-    display: flex;
-    height: 250px;
-    width: 40%;
-    top: 50%;
-    left: 25%;
-    background-color: #ffffff;
-    border-radius: 15px;
-}
-
-.feed#evento {
-    background-color: #252525;
-    border: 1px solid #6f79d5;
-    max-width: 1030px;
-    left:25%;
-  }
-  
-  .feed#evento .evento-info {
-    margin-bottom: 10px; /
-  }
-  
-  .feed#evento h2 {
-    font-size: 1.8rem; 
-    margin-bottom: 5px; 
-  }
-  
-  .feed#evento .detalles {
-    font-size: 1.4rem; 
-    line-height: 1.6; 
-    margin-bottom: 10px;
-  }
-  
-  .feed#evento .fecha-ubicacion {
-    font-size: 1.2rem; 
-  }
-  
-  .feed#evento .fecha-ubicacion strong {
-    font-weight: bold;
-  }
-
-  .feed#evento img {
-    width: 60%; 
-    height: auto; 
-    border-radius: 15px; 
-  }

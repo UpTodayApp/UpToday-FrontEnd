@@ -530,6 +530,10 @@ body {
         font-size: 10px;
     }
 
+    #publicacion {
+        margin-top: 0px;
+    }
+
 }
 
 /* =============== Feeds ============== */
