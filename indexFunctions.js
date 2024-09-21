@@ -45,43 +45,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
 $(document).ready(function () {
     function renderPost(post) {
-        var postHtml = `<br> <div class="feed" id="post-${post.id}">
+        var postHtml = `<div class="feed" id="post-${post.id}">
             <div class="head">
               <div class="user">
                 <div class="profile-photo">
-                  <img class="fotoperfil" src="${post.foto_perfil}">
+                  <img class="fotoperfil" src="./Imagenes/Fotos de perfil/Maria Alejandra.jpg">
                 </div>
                 <div class="info">
                   <span class="bold-text">
-                    <h3>${post.autor}</h3>
+                    <h3>Maria Alejandra</h3>
                   </span>
-                  <small>${post.fecha_publicacion}</small>
+                  <small>Montevideo, Uruguay</small>
                 </div>
               </div>
               <span class="edit">
                 <i class="uil uil-ellipsis-h"></i>
               </span>
             </div>
-      
-            <div class="action-buttons">
-              <div class="interaction-buttons">
-                <span><i class="uil uil-heart"></i></span>
-                <span><i class="uil uil-comment-dots"></i></span>
-                <span><i class="uil uil-share-alt"></i></span>
-              </div>
-              <div class="bookmark">
-                <span><i class="uil uil-bookmark-full"></i></span>
-              </div>
+
+            <div class="liked-by">
+              <p style="width: 100%; word-wrap: break-word;">${post.contenido}</p>
             </div>
       
             <div class="liked-by">
               <p>Le gusta a <span class="bold-text">${post.cantidadLikes}</span> persona/s
-              </p>
-            </div>
-      
-            <div class="caption">
-            ${post.imagen ? `<img class="fotofeed" src="${post.imagen}" class="post-image">` : ''}
-              <p><span class="bold-text">${post.autor}</span> ${post.contenido}
               </p>
             </div>
       
@@ -96,9 +83,10 @@ $(document).ready(function () {
                         <!-- Aquí se cargarán los comentarios -->
                     </div>
                     <div class="comment-input-section">
-                        <img src="${post.foto_perfil}" class="comment-profile-pic"> <!-- Imagen del perfil que comenta -->
-                        <textarea class="comment-input" placeholder="Escribe un comentario..."></textarea>
-                        <button class="submit-comment-btn" data-id="${post.id}">Publicar</button>
+                        <textarea class="textareacom" placeholder="Escribe un comentario..."></textarea>
+                        <a class="commentBtn" data-id="${post.id}">
+                            <img src="./Imagenes/sendmessage.png" alt="Button Image" class="button-image" data-id="${post.id}">
+                        </a>
                     </div>
                 </div>
 
@@ -108,12 +96,13 @@ $(document).ready(function () {
 
     function renderComment(comment, postId) {
         var commentHtml = `
-            <div class="comment" id="comment-${comment.id}" style="display: flex; align-items: center; margin-bottom: 10px;">
-                <img src="${comment.foto_perfil}" class="comment-profile-pic" style="border-radius: 50%; width: 40px; height: 40px; margin-right: 10px;">
-                <div class="comment-content" style="background-color: white; border-radius: 20px; padding: 10px; max-width: 80%; word-wrap: break-word;">
-                    <strong>${comment.autor}</strong>: ${comment.contenido}
+            <div class="comment" id="comment-${comment.id}" style="display: flex; align-items: center; margin-bottom: 10px; width: 100%;">
+                <div class="comment-content" style="color: rgb(0, 0, 0);background-color: white; border-radius: 20px; padding: 10px; word-wrap: break-word;max-width: 70%;">
+                    <span class="bold-text">Maria Alejandra</span>: ${comment.contenido}
                 </div>
-                <button class="delete-comment-btn" data-id="${comment.id}" data-post-id="${postId}" style="margin-left: 10px;">Eliminar</button> <!-- Botón de eliminar comentario -->
+                <a class="deleteCommentBtn" data-id="${comment.id}" data-post-id="${postId}">
+                    <img style="width: 20px" src="./Imagenes/deleteComment.png" alt="Delete Button" class="delete-comment-btn" data-post-id="${postId}" data-id="${comment.id}">
+                </a>
             </div>
         `;
         $(`#comments-${postId} .comments-list`).append(commentHtml);
@@ -221,9 +210,9 @@ $(document).ready(function () {
 
     // ----------------------------------CREAR COMENTARIO-----------------------------------
 
-    $(document).on("click", ".submit-comment-btn", function () {
+    $(document).on("click", ".commentBtn", function () {
         var postId = $(this).data("id");
-        var commentContent = $(`#post-${postId} .comment-input`).val();
+        var commentContent = $(`#post-${postId} .textareacom`).val();
 
         var formData = new FormData();
         formData.append('usuario_id', 1);
@@ -241,7 +230,7 @@ $(document).ready(function () {
             data: formData,
             success: function (data) {
                 renderComment(data, postId);
-                $(`#post-${postId} .comment-input`).val('');
+                $(`#post-${postId} .textareacom`).val('');
             },
             error: function () {
                 alert("Error al crear el comentario.");
