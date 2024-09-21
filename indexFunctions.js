@@ -1,31 +1,31 @@
 //------------------------------------CERRAR SESION--------------------------------------------------------------
 
 var token = localStorage.getItem("accessToken");
-if(token == null)
+if (token == null)
     $(location).prop('href', '/login.html');
 
-$("#salir").click(function(e){
+$("#salir").click(function (e) {
     e.preventDefault();
-    jQuery.ajax({  
-        url: 'http://localhost:8001/api/v1/logout',  
+    jQuery.ajax({
+        url: 'http://localhost:8001/api/v1/logout',
         type: 'GET',
         headers: {
-            "Accept" : "application/json",
-            "Content-Type" : "application/json",
-            "Authorization" : "Bearer " + localStorage.getItem("accessToken")
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + localStorage.getItem("accessToken")
         },
 
-        success: function(resultado) {  
+        success: function (resultado) {
             localStorage.removeItem("accessToken");
             $(location).prop('href', '/login.html');
-            
+
         },
-        
-        error: function(resultado){
+
+        error: function (resultado) {
             alert("Error");
-        } 
-        
-    });  
+        }
+
+    });
 });
 
 //------------------------------------------------HTML PRINCIPAL------------------------------------------------
@@ -186,27 +186,32 @@ $(document).ready(function () {
     //----------------------------------ME GUSTA-----------------------------------
 
     $(document).on("click", ".postLikeButton", function () {
-        var postId = $(this).data("id");
+        var x = new Boolean(false);
+        if (x == false) {
+            var postId = $(this).data("id");
+            var formData = new FormData();
+            formData.append('usuario_id', 1);
+            formData.append('post_id', postId);
 
-        var formData = new FormData();
-        formData.append('usuario_id', 1);
-        formData.append('post_id', postId);
+            $.ajax({
+                url: 'http://localhost:8000/api/megustapost',
+                type: 'post',
+                headers: {
+                    "Accept": "application/json",
+                },
+                processData: false,
+                contentType: false,
+                data: formData,
+                success: function (data) {
+                    alert("Le haz dado ❤️Me gusta a esta publicación.");
+                },
+                error: function () {
+                    alert("Error al dar Me gusta.");
+                }
+            });
+        } else { }
 
-        $.ajax({
-            url: 'http://localhost:8000/api/megustapost',
-            type: 'post',
-            headers: {
-                "Accept": "application/json",
-            },
-            processData: false,
-            contentType: false,
-            data: formData,
-            success: function (data) {
-            },
-            error: function () {
-                alert("Error al dar Me gusta.");
-            }
-        });
+
     });
 
     $(document).on("click", ".postCommentButton", function () {
